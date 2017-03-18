@@ -17,24 +17,24 @@ public class re {
 			
 			Scanner input = new Scanner(System.in);
 			
-			while(input.hasNext()){
 				for ( int i = 0; i < Tabl.length; i++ ) {
-					x = input.nextLine();
-					System.out.print("Enter" + Tabl[i] + " :");
 					
-					if (tr != null){
+					System.out.print("Enter" + Tabl[i] + " :");
+					x = input.nextLine();
+					if (tr != null && !tr.trim().isEmpty()){
 					tr = tr + ";"+ x;
 					}
 					else {tr = x;}
 				}
 				input.close();
-				break;
-			}
+				System.out.print(tr);
+			
 		
 		String fil = "/users/charel16/workspace-mars-2015/Library_Books";
-		FileWriter wr = new FileWriter(fil.trim().toString());
-		wr.write(tr);
-		wr.write(\n);
+		//String fil = "C:/Users/HP/workspace/re.txt";
+		FileWriter wr = new FileWriter(fil.trim().toString() , true);
+		wr.write(tr); 
+		wr.write("\r\n");
 		wr.close();
 	}
 		catch(Exception e){
